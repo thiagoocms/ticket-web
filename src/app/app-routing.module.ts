@@ -7,6 +7,7 @@ import { TicketListComponent } from './components/ticket-list/ticket-list.compon
 import { TicketDetailsComponent } from './components/ticket-details/ticket-details.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './components/register/register.component';
+import { TicketFormComponent } from './components/ticket-form/ticket-form.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         component: TicketListComponent,
        
+      }, {
+        path: "tickets/form",
+        canActivate: [AuthGuard],
+        component: TicketFormComponent
       },
       {
         path: "tickets/:id",

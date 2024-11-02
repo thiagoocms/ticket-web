@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Ticket, TicketStatusEnum } from '../../model/ticket.model';
 import { TicketService } from '../../service/ticket.service';
 import { TicketStatusComponent } from '../ticket-status/ticket-status.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ticket-details',
@@ -17,7 +18,7 @@ export class TicketDetailsComponent implements OnInit {
 
 
   TicketStatusEnum = TicketStatusEnum;
-  constructor(private router: Router, private route: ActivatedRoute, private ticketService: TicketService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private ticketService: TicketService, private toast: ToastrService) { }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'))
@@ -26,18 +27,14 @@ export class TicketDetailsComponent implements OnInit {
     }
     this.findById()
     this.findStatus()
-    
   }
 
   findById() {
-    this.ticketService.findById(this.id).subscribe(res => this.ticket = res.data)
+    this.ticketService.findById(this.id).subscribe(res => this.ticket = res.data, err => this.toast.error(err.error.message))
   }
 
   findStatus() {
-    this.ticketService.findStatus().subscribe(res => {
-      this.list = res.data
-    
-    })
+    this.ticketService.findStatus().subscribe(res => this.list = res.data, err => this.toast.error(err.error.message))
   }
 
 

@@ -5,15 +5,15 @@ export interface Ticket {
     id: number | undefined,
     title: string,
     description: string,
-    status: TicketStatusEnum,
-    waitingDate: number | Date,
-    userId: number,
-    categoryId: number,
-    finishedDate: number | Date,
-    createdDate: number | Date,
-    user: User,
+    status: TicketStatusEnum | undefined,
+    waitingDate: number | Date | undefined,
+    userId: number | undefined,
+    categoryId: number | undefined,
+    finishedDate: number | Date | undefined,
+    createdDate: number | Date | undefined,
+    user: User | undefined,
     employee: User | undefined,
-    category: Category
+    category: Category | undefined
 }
 
 export enum TicketStatusEnum {
@@ -21,5 +21,5 @@ export enum TicketStatusEnum {
     NOT_STARTED = 'Não iniciado',
     IN_PROGRESS = 'Em andamento',
     FINISHED = 'Resolvido',
-    CANCELED = 'cancelado'
+    CANCELED = 'Cancelado'
 }

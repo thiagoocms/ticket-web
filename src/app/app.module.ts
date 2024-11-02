@@ -34,6 +34,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { TicketFormComponent } from './components/ticket-form/ticket-form.component';
+import { MatSelectModule } from '@angular/material/select';
 
 export function playerFactory() {
   return player;
@@ -51,7 +53,8 @@ export function playerFactory() {
     AuthComponent,
     RegisterComponent,
     TicketStatusComponent,
-    LoadingComponent
+    LoadingComponent,
+    TicketFormComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,8 @@ export function playerFactory() {
     MatExpansionModule,
     MatTooltipModule,
     MatCardModule,
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    MatSelectModule
   ],
   providers: [
     {

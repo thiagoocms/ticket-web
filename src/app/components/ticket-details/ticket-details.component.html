@@ -1,3 +1,4 @@
+<mat-icon class="icon-back" routerLink="/home">arrow_back</mat-icon>
 <div class="container-arrow">
     <app-ticket-status *ngFor="let item of list" [label]="item" [active]="ticket?.status"></app-ticket-status>
 </div>
@@ -17,8 +18,8 @@
                 <div class="ticket-field">
                     <strong>Solicitado por:</strong>
                     <span>
-                        {{ ticket.user.name.split(' ').length > 2 ? ticket.user.name.split(' ').slice(0, 2).join(' ') :
-                        ticket.user.name }}
+                        {{ ticket.user!!.name.split(' ').length > 2 ? ticket.user!!.name.split(' ').slice(0, 2).join(' ') :
+                        ticket.user!!.name }}
                     </span>
                 </div>
 
@@ -37,7 +38,7 @@
                 </div>
 
                 <div class="ticket-field">
-                    <strong>Categoria:</strong> <span>{{ ticket.category.name }}</span>
+                    <strong>Categoria:</strong> <span>{{ ticket.category!!.name }}</span>
                 </div>
                 <div class="ticket-field">
                     <strong>Data de Conclusão:</strong><span> {{ ticket.finishedDate | date: 'dd/MM/yyyy' }}</span>

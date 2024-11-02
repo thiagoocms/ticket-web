@@ -1,0 +1,33 @@
+<header>
+    <mat-icon class="icon-back" routerLink="/home">arrow_back</mat-icon>
+    <span>Criação de</span>
+    <span class="title">Ticket</span>
+</header>
+
+<form class="form" (ngSubmit)="createTicket()" #ticketForm="ngForm">
+
+    <div class="row">
+        <mat-form-field class="field-max">
+            <mat-label>Categoria</mat-label>
+            <mat-select [(ngModel)]="ticket.categoryId" name="categoryId" required>
+                <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="field-max">
+            <mat-label>Título</mat-label>
+            <input matInput [(ngModel)]="ticket.title" name="title" required>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="field-max" >
+            <mat-label>Descrição</mat-label>
+            <textarea matInput [(ngModel)]="ticket.description" name="description" required class="fixed-description"></textarea>
+        </mat-form-field>
+    </div>
+
+    <button mat-button class="button" type="submit" [disabled]="!ticketForm.form.valid">Criar Ticket</button>
+</form>
