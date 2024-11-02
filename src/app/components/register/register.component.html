@@ -1,0 +1,56 @@
+<header>
+    <mat-icon class="icon-back" routerLink="/auth/login">arrow_back</mat-icon>
+    <span>Cadastre-se no</span> 
+    <span class="title">Ticket web</span>
+</header>
+
+<form class="form" method="post">
+
+    <div class="row">
+        <mat-form-field color="primary" class="field">
+            <mat-icon class="icon" matIconPrefix>person</mat-icon>
+            <mat-label class="label">Nome</mat-label>
+            <input class="input" matInput [(ngModel)]="user.name" name="nome" required>
+        </mat-form-field>
+        <mat-form-field color="primary" class="field">
+            <mat-icon class="icon" matIconPrefix>badge</mat-icon>
+            <mat-label class="label">CPF</mat-label>
+            <input class="input" matInput [(ngModel)]="user.documentNumber" name="cpf" required>
+        </mat-form-field>
+
+    </div>
+
+    <div class="row">
+        <mat-form-field color="primary" class="field-max">
+            <mat-icon class="icon" matIconPrefix>email</mat-icon>
+            <mat-label class="label">Email</mat-label>
+            <input class="input" matInput [(ngModel)]="user.login" name="email" required>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="field custom-form-field">
+            <mat-icon matIconPrefix>lock</mat-icon>
+            <mat-label>Senha</mat-label>
+            <input matInput [type]="showPassword ? 'text' : 'password'" [(ngModel)]="user.password" name="senha" required>
+            
+            <button mat-icon-button matSuffix (click)="toggleShowPassword()"
+                [attr.aria-label]="showPassword ? 'Ocultar senha' : 'Mostrar senha'" [attr.aria-pressed]="showPassword">
+                <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-form-field class="field custom-form-field">
+            <mat-icon matIconPrefix>lock</mat-icon>
+            <mat-label>Confirme a Senha</mat-label>
+            <input matInput [type]="showConfirmPassword ? 'text' : 'password'" [(ngModel)]="passwordCon" name="confirmarSenha" required>
+            
+            <button mat-icon-button matSuffix (click)="toggleShowConfirmPassword()"
+                [attr.aria-label]="showConfirmPassword ? 'Ocultar senha' : 'Mostrar senha'" [attr.aria-pressed]="showConfirmPassword">
+                <mat-icon>{{ showConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <button mat-button class="button" (click)="register()" type="submit" [disabled]="!isFormValid()">Cadastrar</button>
+</form>

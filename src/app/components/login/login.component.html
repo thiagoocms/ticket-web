@@ -1,0 +1,25 @@
+<header> <span>Acesse o </span> <span class="title">Ticket web</span></header>
+
+<form class="form" method="post">
+
+    <mat-form-field color="primary" class="field">
+        <mat-icon class="icon" matIconPrefix>email</mat-icon>
+        <mat-label class="label">email</mat-label>
+        <input class="input" matInput [(ngModel)]="usuario.email" name="email" required>
+    </mat-form-field>
+
+    <mat-form-field class="field custom-form-field">
+        <mat-icon matIconPrefix>lock</mat-icon>
+        <mat-label>senha</mat-label>
+        <input matInput [type]="showPassword ? 'text' : 'password'" [(ngModel)]="usuario.senha" name="senha" required>
+        <button mat-icon-button matSuffix (click)="toggleShowPassword()"
+            [attr.aria-label]="showPassword ? 'Ocultar senha' : 'Mostrar senha'" [attr.aria-pressed]="showPassword">
+            <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <button mat-button class="button" (click)="login()" type="submit" [disabled]="!isFormValid()">Entrar</button>
+    <div class="box-view"><span class="view"></span> OU <span class="view"></span></div>
+    <button mat-button class="button" routerLink="/auth/register">Crie sua conta</button>
+
+</form>

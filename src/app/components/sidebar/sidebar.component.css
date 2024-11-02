@@ -1,0 +1,43 @@
+mat-list-item {
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+mat-expansion-panel-header {
+    margin-left: -7px;
+}
+
+mat-icon {
+    font-size: 24px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.list-item-text {
+    flex: 1;
+    font-size: 20px;
+    line-height: 48px;
+}
+
+
+
+.icon-settings {
+    margin-top: 10px;
+    height: 24px;
+
+}
+
+.span {
+    margin-right: 10px;
+    font-style: normal;
+}
+
+.sidenav {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+
+}

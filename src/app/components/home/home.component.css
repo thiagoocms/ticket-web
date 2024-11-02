@@ -1,0 +1,24 @@
+.icon-menu {
+    color: #494747;
+}
+
+.menu-button {
+    position: absolute;
+    top: 3%;
+    left: 1%;
+    z-index: 1000;
+}
+
+mat-sidenav-container {
+    height: 90%;
+}
+
+.content {
+    margin-left: 230px;
+}
+
+@media (max-width: 1000px) {
+    .content {
+        margin-left: 0px;
+    }  
+}

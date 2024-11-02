@@ -1,0 +1,61 @@
+header {
+    display: flex;
+    flex-direction: column;
+    color: rgb(15, 12, 12);
+    font-size: 33px;
+    font-weight: 600;
+    margin: 18% 0 30px 0;
+    text-align: center;
+    font-family: "montserrat", sans-serif;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 60%;
+    margin-bottom: 20px;
+}
+
+.field {
+    width: 48%;
+}
+
+.field-max {
+    width: 100%;
+}
+
+.button {
+    height: 35px;
+    width: 50%;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+.button:hover {
+    color: #8dc7d1;
+}
+
+.title {
+    color: #8dc7d1;
+    font-size: 50px;
+    
+}
+
+.icon-back {
+    margin-left: 3%;
+    font-size: 30px;
+    cursor: pointer;
+}
+.icon-back:hover {
+    color: #8dc7d1;
+}

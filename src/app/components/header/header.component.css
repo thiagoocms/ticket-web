@@ -1,0 +1,26 @@
+.header {
+    background-color: #8dc7d1;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: #494747;
+}
+
+.title {
+    margin-left: 10%;
+    font-weight: 400;
+    color: #494747;
+    cursor: pointer;
+}
+
+.icon-user{
+    margin-right: 2%;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    color: #494747;
+    cursor: pointer;
+}

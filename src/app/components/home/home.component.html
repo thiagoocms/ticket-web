@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<button mat-button (click)="toggleSidenav()" *ngIf="isMobile" class="menu-button">
+    <mat-icon class="icon-menu">menu</mat-icon>
+  </button>
+<mat-sidenav-container>
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
+

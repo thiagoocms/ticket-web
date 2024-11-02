@@ -1,0 +1,28 @@
+<mat-sidenav #sidenav mode="side" [opened]="isMobile ? false : true" class="sidenav" >
+    <mat-list>
+        <mat-list-item routerLink="/home/ticketS">
+            <mat-icon mat-list-icon>home</mat-icon>
+            <span class="list-item-text">Home</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header *ngIf="isVisible">
+                <mat-icon class="icon-settings">settings</mat-icon>
+                <span class="list-item-text span">Configurações</span>
+            </mat-expansion-panel-header>
+            <mat-action-list>
+                <mat-list-item routerLink="/configuracoes/categorias">
+                    <mat-icon>tune</mat-icon>
+                    <span class="list-item-text">Categorias</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item routerLink="/configuracoes/usuarios">
+                    <mat-icon>person</mat-icon>
+                    <span class="list-item-text">Usuarios</span>
+                </mat-list-item>
+            </mat-action-list>
+        </mat-expansion-panel>
+        <mat-divider></mat-divider>
+
+    </mat-list>
+</mat-sidenav>

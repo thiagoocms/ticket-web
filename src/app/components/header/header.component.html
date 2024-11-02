@@ -1,0 +1,9 @@
+<header class="header">
+    <h1 class="title"  (click)="home()">Ticket web</h1>
+    <mat-icon [matMenuTriggerFor]="menu" class="icon-user">account_circle</mat-icon>
+    <mat-menu #menu="matMenu">
+        
+        <button mat-menu-item (click)="logout()">
+            <mat-icon mat-menu-icon>logout</mat-icon>Sair</button>
+    </mat-menu>
+</header>

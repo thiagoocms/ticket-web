@@ -1,0 +1,45 @@
+.label-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.label {
+    background-color: #494747;
+    color: #8dc7d1;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 150px;
+    height: 70px;
+}
+.label div {
+    margin-left: 50px;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 40px solid #494747;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    position: relative;
+    z-index: 2
+}
+
+.back {
+    position: absolute;
+    border-left: 40px solid #ffff;
+
+}
+
+.label-active {
+    background-color: #8dc7d1;
+    color: #494747;
+}
+
+.arrow-active {
+    border-left: 40px solid #8dc7d1;
+}
